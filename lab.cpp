@@ -7,19 +7,19 @@
 using namespace std;
 
 
-void massSort (vector<Atom> *someAtom) {
-    sort(someAtom->begin(), someAtom->end(), [](Atom &e1, Atom &e2) {
+void massSort (vector<Atom> *someAtoms) {
+    sort(someAtoms->begin(), someAtoms->end(), [](Atom &e1, Atom &e2) {
         return e1.getMass() < e2.getMass();
     });
 }
-void print (vector<Atom> someAtom) {
-    for (int i = 0; i < someAtom.size(); i++)
+void print (vector<Atom> someAtoms) {
+    for (int i = 0; i < someAtoms.size(); i++)
     {
-        cout << someAtom[i].getMass() << "\t"<< someAtom[i].getName() << endl;
+        cout << someAtoms[i].getMass() << "\t"<< someAtoms[i].getName() << endl;
     }
     cout << endl;
 }
-void massAverage(vector<Atom> someAtom) {
+void massAverage(vector<Atom> someAtoms) {
 }
 //
 // Created by Rostik on 23.11.2022.
