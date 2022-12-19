@@ -13,9 +13,9 @@ int main(void) {
     Atom heliy(RADIOACTIVE, 4, 2, 4, 1);
     Atom bor(ANTIMATTER, 10, 6, 6, 5);
     Atom neon(STABLE, 20, 7, 3, 5);
-    vector<Atom> someAtom {hydrogen, oxygen, heliy, bor, neon};
-    massSort(&someAtom);
-    print(someAtom);
+    vector<Atom> someAtoms {hydrogen, oxygen, heliy, bor, neon};
+    massSort(&someAtoms);
+    print(someAtoms);
 
     int arr[]={1,14,4,10,20};
     int sum=0, n=5;
