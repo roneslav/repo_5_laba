@@ -55,10 +55,10 @@ public:
 
 class Molecule{
 private:
-    vector<Atom> someAtom;
+    vector<Atom> someAtoms;
 public:
-    Molecule(vector<Atom> someAtom){
-        this -> someAtom = someAtom;
+    Molecule(vector<Atom> someAtoms){
+        this -> someAtoms = someAtoms;
     };
     Atom atom;
     Molecule(Atom atom){
