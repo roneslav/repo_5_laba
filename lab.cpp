@@ -9,7 +9,7 @@ using namespace std;
 
 void massSort (vector<Atom> *someAtoms) {
     sort(someAtoms->begin(), someAtoms->end(), [](Atom &e1, Atom &e2) {
-        return e1.getMass() < e2.getMass();
+        return atom1.getMass() < atom2.getMass();
     });
 }
 void print (vector<Atom> someAtoms) {
