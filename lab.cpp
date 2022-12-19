@@ -8,7 +8,7 @@ using namespace std;
 
 
 void massSort (vector<Atom> *someAtoms) {
-    sort(someAtoms->begin(), someAtoms->end(), [](Atom &e1, Atom &e2) {
+    sort(someAtoms->begin(), someAtoms->end(), [](Atom &atom1, Atom &atom2) {
         return atom1.getMass() < atom2.getMass();
     });
 }
