@@ -5,7 +5,7 @@
 #include<math.h>
 using namespace std;
 
-enum type{
+enum atom{
     ISOTYPE,
     RADIOACTIVE,
     ION,
