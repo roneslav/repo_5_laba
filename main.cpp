@@ -1,30 +1,39 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include<math.h>
-#include "lab.h"
-#include "lab.cpp"
-using namespace std;
+#include "Molecule.h"
 
-int main(void) {
+void massSort (vector<Atom> *someAtoms) {
+    sort(someAtoms->begin(), someAtoms->end(), [](Atom &atom1, Atom &atom2) {
+        return atom1.getMass() < atom2.getMass();
+    });
+}
+void print (vector<Atom> someAtoms) {
+    for (int i = 0; i < someAtoms.size(); i++)
+    {
+        cout << someAtoms[i].getMass() << "\t"<< someAtoms[i].getName() << endl;
+    }
+    cout << endl;
+}
+float massAverage(vector<Atom> someAtoms) {
+    int sum=0;
+    float average;
+    for( auto a : someAtoms){
+        sum+=a.atomic_mass_unit;
+    }
+    average= sum/ someAtoms.size();
+    return average;
+}
+
+int main() {
     Atom hydrogen(ISOTYPE, 1, 0, 1, 0);
     Atom oxygen(ION, 14, 8, 8, 8);
     Atom heliy(RADIOACTIVE, 4, 2, 4, 1);
     Atom bor(ANTIMATTER, 10, 6, 6, 5);
     Atom neon(STABLE, 20, 7, 3, 5);
-    vector<Atom> someAtom {hydrogen, oxygen, heliy, bor, neon};
-    massSort(&someAtom);
-    print(someAtom);
+    vector<Atom> someAtoms {hydrogen, oxygen, heliy, bor, neon};
+    massSort(&someAtoms);
+    print(someAtoms);
+    massAverage(someAtoms);
 
-    int arr[]={1,14,4,10,20};
-    int sum=0, n=5;
-    float average=0;
-    for(int j=0; j<n; j++ )
-        sum+=arr[j];
-    cout<<"The sum of mass's atoms is"<<"\t"<< sum;
-    average=sum/n;
-    cout<<"\n"<< "Average mass of atoms is"<<"\t"<< average;
+    cout<<"\n"<< "Average mass of atoms is"<<"\t"<< massAverage(someAtoms);
 
     Molecule mol1(hydrogen);
     cout<<"\n"<<"hydrogen"<<mol1.isNeutral(hydrogen);
@@ -37,4 +46,5 @@ int main(void) {
     Molecule mol5(neon);
     cout<<"\n"<<"neon"<<mol5.isNeutral(neon);
 
+    return 0;
 }
