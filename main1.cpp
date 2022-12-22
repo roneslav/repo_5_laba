@@ -31,7 +31,10 @@ int main() {
     vector<Atom> someAtoms {hydrogen, oxygen, heliy, bor, neon};
     massSort(&someAtoms);
     print(someAtoms);
+<<<<<<< HEAD
     massAverage(someAtoms);
+=======
+>>>>>>> 415449673386b67c5b3cef752338ad04797f65c9
 
     cout<<"\n"<< "Average mass of atoms is"<<"\t"<< massAverage(someAtoms);
 
